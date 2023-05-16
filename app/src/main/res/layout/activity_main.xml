@@ -6,13 +6,167 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <TextView
+                style="@style/TextInfo"
+                android:text="Scale Type"
+                android:layout_marginBottom="15dp"/>
+
+            <!--TAMANHO ORIGINAL DA IMAGEM: 150X150-->
+
+            <!--
+                CENTER
+                O valor center mantem o tamanho original da imagem entretando
+                aquelas partes que não couberem na visualização são cortadas.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="CENTER"/>
+            <ImageView
+                android:scaleType="center"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#BCBCBC"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--
+                CENTER INSIDE
+                O valor center inside centraliza a imagem de modo que ela seja completamente
+                exibida dentro da visualização mantendo as proporções X e Y.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="CENTER INSIDE" />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#FFEB3B"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--
+                CENTER CROP
+                Ao definirmos o valor center crop para o atributo scaleTyle a imagem
+                é ampliada de modo a ocupar toda a visualização. Essa ampliação é feita
+                de forma proporcional, extrapolando muitas vezes a área da visualização.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="CENTER CROP"
+                android:layout_marginTop="20dp"/>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#009688"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--
+                FIT CENTER
+                Ao definirmos o valor fit center, a imagem expandirá proporcionalmente até atingir um
+                dos lados da visualização, assim, se a largura for menor que a altura a imagem ficará
+                centralizada verticalmente com seus lados esquerdo e direito tocando a visualização. Já
+                se a altura for menor que a largura a imagem ficará centralizada horizontalmente com seus
+                lados topo e base tocando a visualização.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="FIT CENTER" />
+            <ImageView
+                android:scaleType="fitCenter"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FF5722"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--
+                FIT END
+                O fit end funciona da mesma forma que o fit center, entretanto sua única diferença é que
+                a imagem é fixada no fim da visualização.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="FIT END" />
+            <ImageView
+                android:scaleType="fitEnd"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FF5722"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--
+                FIT START
+                O fit start funciona da mesma forma que o fit center, entretanto sua única diferença é que
+                a imagem é fixada no inicio da visualização.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="FIT START" />
+            <ImageView
+                android:scaleType="fitStart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FF5722"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--
+                FIT XY
+                Ao utilizarmos o fit xy a imagem estica ou se encolhe de modo a ocupar _todo
+                o espaço disponível pela visualização.
+            -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="FIT XY" />
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FF5722"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+            <!--MATRIX-->
+            <!--
+               MATRIX
+               Ao definirmos o valor matrix conseguimos aplicar diversas configurações
+               de posicionamento na imagem, neste caso atráves da classe MainActivity por exemplo.
+           -->
+            <TextView
+                style="@style/TextInfo"
+                android:text="MATRIX" />
+            <ImageView
+                android:id="@+id/iv_matrix"
+                android:scaleType="matrix"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#673AB7"
+                app:srcCompat="@drawable/android"
+                android:contentDescription="@string/imagem_android" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
