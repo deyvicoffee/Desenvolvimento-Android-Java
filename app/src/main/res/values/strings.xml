@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">MeuPrimeiroApp</string>
+    <string name="app_name">Notícias</string>
+    <string name="descricao_imagem">Imagem James Webb</string>
+    <string name="titulo_noticia">James Webb detecta presença de água em cometa</string>
+    <string name="data_publicacao">16/05/23</string>
+    <string name="conteudo_noticia">
+        <font size='24'>O</font> Telescópio Espacial James Webb fez uma nova observação de um cometa e confirmou a presença de água em forma de vapor ao redor desse corpo celeste, o cometa 238P/Read, originário da cintura de asteroides do nosso Sistema Solar.\n\n
+
+        As observações trouxeram um novo mistério para a comunidade científica, uma vez que não foram encontrados indícios de dióxido de carbono, que normalmente representa 10% do material vaporizado de um cometa. Os pesquisadores acreditam que o dióxido de carbono pode ter se dissipado ao longo de bilhões de anos, especulando até mesmo que o cometa 238P/Read possa ter se formado em uma região do Sistema Solar sem dióxido de carbono.\n\n
+
+        Naturalmente, esse mistério só aumentou a curiosidade da comunidade científica, que certamente realizará novas observações.\n\n
+
+        Fonte: <a href='https://www.noticiasaominuto.com.br/tech/2020578/james-webb-detecta-presenca-de-agua-em-cometa'>https://www.noticiasaominuto.com.br/tech/2020578/james-webb-detecta-presenca-de-agua-em-cometa</a>
+
+    </string>
+    <string name="proximo">Próximo</string>
+    <string name="anterior">Anterior</string>
 </resources>
