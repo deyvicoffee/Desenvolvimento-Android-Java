@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TelaReproducao">
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="NomeSerieOuFilme">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">34dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:drawableTop">@drawable/ic_seta_baixo_24dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/secondary_text_dark</item>
+    </style>
+
+    <style name="TemporadaEpisodio">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="IconeMenuSuperior" parent="TelaReproducao">
+        <item name="tint">@color/white</item>
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="ImagemSerieFilme">
+        <item name="android:layout_marginTop">100dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">400dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="Minutagem">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BarraDeProgresso">
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="IconeMenuReproducao" parent="TelaReproducao">
+        <item name="tint">@color/white</item>
+        <item name="android:layout_marginTop">100dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">MeuPrimeiroApp</string>
+    <string name="app_name">Netflix</string>
+    <string name="descricao_ibnt_mensagem">Mensagem</string>
+    <string name="descricao_ibnt_volume">Volume</string>
+    <string name="descricao_ibnt_favoritos">Favoritos</string>
+    <string name="descricao_ibnt_conteudo">Conteúdo</string>
+    <string name="descricao_ibtn_reiniciar">Botão responsável por reiniciar a reprodução da série ou filme.</string>
+    <string name="descricao_ibtn_reproduzir">Botão responsável por iniciar a reprodução da série ou filme.</string>
+    <string name="descricao_ibtn_pausar">Botão responsável por pausar a reprodução da série ou filme.</string>
+    <string name="tempo_inicial">00:00</string>
 </resources>

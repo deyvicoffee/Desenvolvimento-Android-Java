@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="NomeSerieOuFilme">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">34dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:drawableTop">@drawable/ic_seta_baixo_24dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/secondary_text_dark</item>
+
+        <!--
+            Como o atributo drawableTint está disponível apenas para APIs 23 ou superiores a solução
+            foi encontrar uma cor padrão que ficasse agradável na interface nos modos noturno e não noturno para APIs 21 e 22
+            neste caso o vermelho e personalizar, sobrescrevendo os arquivos de estilo padrão(values\styles e night\styles) para
+            as demais APIs utilizando os arquivos v23\styles e night-v23\styles.
+        -->
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+
+</resources>

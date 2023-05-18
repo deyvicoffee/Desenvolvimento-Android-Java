@@ -1,18 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true"> <!--A propriedade fillViewport define se a scrollview deve estender seu conteúdo para preencher a viewport (área de exibição do dispositivo).-->
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/TelaReproducao"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingBottom="30dp"
+        tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            style="@style/NomeSerieOuFilme"
+            android:id="@+id/tv_titulo"
+            android:text="Dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/TemporadaEpisodio"
+            android:id="@+id/tv_tempordadaEpisodio"
+            android:text="S1:E4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <ImageButton
+            style="@style/IconeMenuSuperior"
+            android:id="@+id/ibtn_mensagem"
+            android:contentDescription="@string/descricao_ibnt_mensagem"
+            android:src="@drawable/ic_mensagem_24dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+        <ImageButton
+            style="@style/IconeMenuSuperior"
+            android:id="@+id/ibtn_volume"
+            android:contentDescription="@string/descricao_ibnt_volume"
+            android:src="@drawable/ic_volume_24dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_50"
+            app:layout_constraintStart_toStartOf="@+id/guideline_25"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+        <ImageButton
+            android:id="@+id/ibtn_favorito"
+            style="@style/IconeMenuSuperior"
+            android:contentDescription="@string/descricao_ibnt_favoritos"
+            android:src="@drawable/ic_estrela_24dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_75"
+            app:layout_constraintStart_toStartOf="@+id/guideline_50"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+        <ImageButton
+            style="@style/IconeMenuSuperior"
+            android:id="@+id/ibtn_conteudo"
+            android:contentDescription="@string/descricao_ibnt_conteudo"
+            android:src="@drawable/ic_conteudo_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_75"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+        <ImageView
+            style="@style/ImagemSerieFilme"
+            android:id="@+id/iv_serieFilme"
+            android:contentDescription="Captura de um trecho da temporada 1 - episódio 5 da série Dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titulo"
+            app:srcCompat="@drawable/dark_s1_e4" />
+
+        <TextView
+            style="@style/Minutagem"
+            android:id="@+id/tv_tempoInicial"
+            android:text="@string/tempo_inicial"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_serieFilme" />
+
+        <TextView
+            style="@style/Minutagem"
+            android:id="@+id/tv_tempoFinal"
+            android:text="00:48"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_75"
+            app:layout_constraintTop_toBottomOf="@+id/iv_serieFilme" />
+
+        <SeekBar
+            android:id="@+id/sb_tempoAtual"
+            style="@style/BarraDeProgresso"
+            app:layout_constraintEnd_toStartOf="@+id/tv_tempoFinal"
+            app:layout_constraintStart_toEndOf="@+id/tv_tempoInicial"
+            app:layout_constraintTop_toBottomOf="@+id/iv_serieFilme" />
+
+        <ImageButton
+            style="@style/IconeMenuReproducao"
+            android:id="@+id/ibtn_reiniciar"
+            android:contentDescription="@string/descricao_ibtn_reiniciar"
+            android:src="@drawable/ic_reiniciar_48dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_serieFilme" />
+
+        <ImageView
+            style="@style/IconeMenuReproducao"
+            android:id="@+id/ibtn_reproduzir"
+            android:contentDescription="@string/descricao_ibtn_reproduzir"
+            android:src="@drawable/ic_play_48dp"
+            app:layout_constraintEnd_toStartOf="@+id/ibtn_pausar"
+            app:layout_constraintStart_toEndOf="@+id/ibtn_reiniciar"
+            app:layout_constraintTop_toBottomOf="@+id/iv_serieFilme" />
+
+        <ImageView
+            style="@style/IconeMenuReproducao"
+            android:id="@+id/ibtn_pausar"
+            android:contentDescription="@string/descricao_ibtn_pausar"
+            android:src="@drawable/ic_pause_48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_75"
+            app:layout_constraintTop_toBottomOf="@+id/iv_serieFilme" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
